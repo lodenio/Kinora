@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Lobster Two', cursive;
+    --font-sans: 'Raleway', sans-serif;
+
+    /* OKLCH Color Palette */
+    --canvas-bg: oklch(98.2% 0.008 85);
+    --surface-card: oklch(99.8% 0.002 85);
+    --surface-glass: oklch(99.2% 0.006 85 / 0.88);
+    --surface-subtle: oklch(95% 0.012 80);
+    --surface-hover: oklch(96.5% 0.01 80);
+
+    --border-subtle: oklch(89% 0.015 80);
+    --border-card: oklch(86% 0.02 75);
+    --border-active: oklch(72% 0.16 68);
+
+    --text-primary: oklch(22% 0.03 55);
+    --text-secondary: oklch(46% 0.025 55);
+    --text-muted: oklch(62% 0.02 55);
+
+    /* Accents */
+    --accent-amber: oklch(74% 0.17 68);
+    --accent-amber-light: oklch(94% 0.05 75);
+    --accent-coral: oklch(68% 0.18 28);
+    --accent-coral-light: oklch(93% 0.05 28);
+    --accent-sage: oklch(65% 0.14 150);
+    --accent-sage-light: oklch(93% 0.04 150);
+    --accent-sapphire: oklch(60% 0.16 250);
+    --accent-sapphire-light: oklch(92% 0.04 250);
+
+    /* Clean Multi-Layered Shadows */
+    --shadow-soft: 0 2px 8px -2px oklch(22% 0.03 55 / 0.05), 0 6px 16px -4px oklch(22% 0.03 55 / 0.08);
+    --shadow-elevated: 0 4px 16px -2px oklch(22% 0.03 55 / 0.06), 0 14px 28px -6px oklch(22% 0.03 55 / 0.10);
+    --shadow-glow-amber: 0 0 0 1px oklch(74% 0.17 68 / 0.4), 0 8px 24px -4px oklch(74% 0.17 68 / 0.25);
+    --shadow-glow-coral: 0 0 0 1px oklch(68% 0.18 28 / 0.4), 0 8px 24px -4px oklch(68% 0.18 28 / 0.25);
+    --shadow-glass: 0 8px 32px 0 oklch(22% 0.03 55 / 0.08), inset 0 1px 0 0 oklch(100% 0 0 / 0.8);
+    --shadow-modal: 0 24px 60px -12px oklch(20% 0.03 55 / 0.25), 0 12px 24px -8px oklch(20% 0.03 55 / 0.15);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--canvas-bg);
+    color: var(--text-primary);
+  }
+
+  h1, h2, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* React Flow customizations */
+.react-flow__background {
+  background-color: var(--canvas-bg);
+}
+
+.react-flow__edge-path {
+  stroke-width: 2.5;
+  transition: stroke 0.2s ease, stroke-width 0.2s ease;
+}
+
+.react-flow__handle {
+  width: 10px;
+  height: 10px;
+  background-color: oklch(74% 0.17 68);
+  border: 2px solid white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.react-flow__handle:hover {
+  transform: scale(1.35);
+  background-color: oklch(68% 0.18 28);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(80% 0.02 75);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(68% 0.03 75);
+}
